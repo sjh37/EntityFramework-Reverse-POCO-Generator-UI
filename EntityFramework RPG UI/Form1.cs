@@ -8,6 +8,9 @@ namespace EntityFramework_RPG_UI
 {
     public partial class Form1 : Form
     {
+        private const string NoTables = "TableFilterInclude = new Regex(\"^$\");";
+        private const string AllTables = "TableFilterInclude = null;";
+
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +55,7 @@ namespace EntityFramework_RPG_UI
         {
             if (tables.CheckedItems.Count == 0)
             {
-                regex.Text = "TableFilterInclude = null;";
+                regex.Text = NoTables;
                 return;
             }
 
@@ -81,7 +84,8 @@ namespace EntityFramework_RPG_UI
             {
                 tables.SetItemCheckState(n, CheckState.Checked);
             }
-            UpdateRegex();
+            regex.Text = AllTables;
+            Clipboard.SetText(AllTables);
         }
 
         private void selectNone_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -90,7 +94,8 @@ namespace EntityFramework_RPG_UI
             {
                 tables.SetItemCheckState(n, CheckState.Unchecked);
             }
-            UpdateRegex();
+            regex.Text = NoTables;
+            Clipboard.SetText(NoTables);
         }
     }
 }
