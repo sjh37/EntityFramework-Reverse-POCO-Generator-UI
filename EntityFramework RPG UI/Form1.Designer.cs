@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.connectToDatabase = new System.Windows.Forms.Button();
             this.tables = new System.Windows.Forms.CheckedListBox();
             this.regex = new System.Windows.Forms.TextBox();
@@ -115,6 +116,7 @@
             this.Controls.Add(this.regex);
             this.Controls.Add(this.tables);
             this.Controls.Add(this.connectToDatabase);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "UI for the EntityFramework Reverse POCO Generator";
             this.ResumeLayout(false);
