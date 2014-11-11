@@ -31,6 +31,8 @@ namespace EntityFramework_RPG_UI
             if (result != DialogResult.OK)
                 return;
 
+            connectionString.Text = dcd.ConnectionString;
+
             // Load tables
             using (var connection = new SqlConnection(dcd.ConnectionString))
             {
