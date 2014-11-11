@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.selectAll = new System.Windows.Forms.LinkLabel();
             this.selectNone = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.connectionString = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // connectToDatabase
@@ -56,7 +58,7 @@
             this.tables.FormattingEnabled = true;
             this.tables.Location = new System.Drawing.Point(13, 43);
             this.tables.Name = "tables";
-            this.tables.Size = new System.Drawing.Size(469, 289);
+            this.tables.Size = new System.Drawing.Size(469, 304);
             this.tables.TabIndex = 3;
             this.tables.SelectedIndexChanged += new System.EventHandler(this.tables_SelectedIndexChanged);
             // 
@@ -65,19 +67,19 @@
             this.regex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.regex.CausesValidation = false;
-            this.regex.Location = new System.Drawing.Point(13, 362);
+            this.regex.Location = new System.Drawing.Point(13, 373);
             this.regex.MaxLength = 65535;
             this.regex.Name = "regex";
             this.regex.ReadOnly = true;
             this.regex.Size = new System.Drawing.Size(469, 20);
-            this.regex.TabIndex = 4;
+            this.regex.TabIndex = 5;
             this.regex.Text = "TableFilterInclude = null;";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 343);
+            this.label1.Location = new System.Drawing.Point(12, 357);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 13);
             this.label1.TabIndex = 4;
@@ -105,11 +107,35 @@
             this.selectNone.Text = "Select None";
             this.selectNone.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.selectNone_LinkClicked);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 405);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Connection string";
+            // 
+            // connectionString
+            // 
+            this.connectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.connectionString.CausesValidation = false;
+            this.connectionString.Location = new System.Drawing.Point(12, 421);
+            this.connectionString.MaxLength = 65535;
+            this.connectionString.Name = "connectionString";
+            this.connectionString.ReadOnly = true;
+            this.connectionString.Size = new System.Drawing.Size(469, 20);
+            this.connectionString.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 394);
+            this.ClientSize = new System.Drawing.Size(494, 453);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.connectionString);
             this.Controls.Add(this.selectNone);
             this.Controls.Add(this.selectAll);
             this.Controls.Add(this.label1);
@@ -132,6 +158,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel selectAll;
         private System.Windows.Forms.LinkLabel selectNone;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox connectionString;
     }
 }
 
