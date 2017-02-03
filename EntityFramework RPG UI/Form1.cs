@@ -37,12 +37,14 @@ namespace EntityFramework_RPG_UI
             using (var connection = new SqlConnection(dcd.ConnectionString))
             {
                 connection.Open();
-                var cmd = new SqlCommand("SELECT name FROM sys.Tables ORDER BY name", connection);
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                var cmd = new SqlCommand(
+                    "SELECT t.name, s.name from sys.tables t INNER JOIN sys.schemas s ON t.schema_id = s.schema_id ORDER BY t.name",
+                    connection);
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        tables.Items.Add(reader.GetString(0));
+                        tables.Items.Add(new TableSchema(reader.GetString(0), reader.GetString(1)));
                     }
                 }
             }
@@ -72,7 +74,8 @@ namespace EntityFramework_RPG_UI
                 else
                     first = false;
 
-                sb.AppendFormat("^{0}$", item);
+                var tableSchema = item as TableSchema;
+                if (tableSchema != null) sb.AppendFormat("^{0}$", tableSchema.TableName);
             }
 
             sb.Append("\");");
