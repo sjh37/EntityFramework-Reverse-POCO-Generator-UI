@@ -11,3 +11,6 @@ A simple UI to allow you to easily select which tables you want the EntityFramew
 If the regex text box at the bottom is blank, don't worry, its just that the text box can only display a certain amount of text. The text will still be to the clipboard ready for you to use. However, this is also a warning that you have too many tables in your db context.
 
 Try to keep your db contexts small (< 60 tables).
+
+### Give a Star! :star:
+If you like or are using this project please give it a star. Thanks!
